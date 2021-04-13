@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-startup-image" href="https://www.wepora.com/asset/img/wepora-logo.png">
+  <link rel="icon" type="image/x-icon" href="https://www.wepora.com/asset/img/wepora-logo.png">
+  <meta name="description"
+    content="Wepora is a best Graphics, software and Web Development company  and provides all IT solutions to their client. In india.." />
+  <meta name="Keywords"
+    content="website design | website development | website logo  |  website hosting  | logo design| logo design ideas  | SEO | android |  best software company in india | cheapest | graphic design | Shrikant Kushwaha">
+  <meta name="author" content="contain by Wepora team">
+  <meta name="copyright" content="Copyright © 2020 Wepora" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <title>Wepora Snippets</title>
+</head>
+
+<body>
+  <!--content start-->
+
+  <script>
+    //L'aventurier possède 100 points de vie
+    let aventurierVie = 100;
+    //L'aventurier va avoir le choix entre 3 armes, chacune infligeant des dégâts plus ou moins élevés (bois: 2, fer: 5, magique: 10) et 3 armures, protégeant d'une certaine quantité de dégâts (bois : 1, fer: 3, magique: 5)
+    let attaqueAventurier = +prompt(
+      'séléctionner votre arme : \nARME EN BOIS :  Attaque : 2\nARME EN FER :  Attaque : 5\nARME MAGIQUE :  Attaque : 10',
+    );
+
+    let defenseAventurier = +prompt(
+      'séléctionner votre armure : \nARMURE EN BOIS :  Défense : 1\nARMURE EN FER :  Défense : 3\nARMURE MAGIQUE :  Défense : 5',
+    );
+
+    //Une fois l'équipement choisi, le combat avec le Maitre du Donjon commence.
+    //Le Maitre du Donjon a 150 points de vie, inflige 6 points de dégâts par tour et possède une armure le protégeant de 4 points de dégâts
+
+    // Le maitre du donjon possède 150 points de vie
+    let maitreDonjonVie = 150;
+    let attaquemaitreDonjon = 6;
+    let defensemaitreDonjon = 4;
+    //Les deux combattants s'attaquent mutuellement (le Maitre du Donjon commence) jusqu'à ce que les points de vie de l'un des deux atteigne 0
+    let i = 0;
+    while (aventurierVie > 0 && maitreDonjonVie > 0) {
+      if (i == 0) {
+        console.log(`TOUR : ${i + 1} :
+    Le maitre du donjon commence : il attaque : 
+    cela inflige 6 points de dégâts sur la vie de l aventurier
+    les points de l'aventurier sont maintenant de ${(aventurierVie -=
+            attaquemaitreDonjon - defenseAventurier)}`);
+      } else if (i % 2 !== 0) {
+        console.log(`TOUR : ${i + 1} :
+    Au tour de L'aventurier : il attaque  : 
+    cela inflige ${attaqueAventurier} points de dégâts sur la vie du maitre du donjon
+    les points du du maitre du donjon sont maintenant de ${(maitreDonjonVie -=
+            attaqueAventurier - defensemaitreDonjon)}`);
+      } else if (i % 2 == 0) {
+        console.log(`TOUR : ${i + 1} :
+    Au tour du maitre du donjon : il attaque : 
+    cela inflige 6 points de dégâts sur la vie de l aventurier
+    les points du du maitre du donjon sont maintenant de ${(aventurierVie -=
+            attaquemaitreDonjon - defenseAventurier)}`);
+      }
+      i++;
+    }
+
+    if (maitreDonjonVie > 0 && aventurierVie <= 0) {
+      console.log(`Le maitre du donjon a Gagné !`);
+    } else if (aventurierVie > 0 && maitreDonjonVie <= 0) {
+      console.log(`L'aventurier a Gagné !`);
+    } else {
+      console.log(`Aucun vainqueur c 'est l'egalité parfaite' !`);
+    }
+
+  </script>
+
+</body>
+
+</html>
